@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomify - Bouquet Order</title>
+    <link rel="stylesheet" href="purchase.css">
+    <link rel="stylesheet" href="mouse.css">
+    <link rel="stylesheet" href="scrollbar.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-options='90'>🌸</text></svg>">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+
+    <div class="container">
+        <div class="left-section">
+            <h1 class="logo">Bloomify</h1>
+            <img id="bouquetImage" src="" alt="Bouquet" class="bouquet-image">
+        </div>
+
+        <div class="form-section">
+            <h2 class="form-title">Bouquet Flower</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="recipientName">Recipient Name</label>
+                    <input type="text" id="recipientName" name="recipientName" placeholder="Recipient Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deliveryAddress">Delivery Address</label>
+                    <input type="text" id="deliveryAddress" name="deliveryAddress" placeholder="Delivery Address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateDate">Date</label>
+                    <input type="date" id="dateDate" name="dateDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="giftMessage">Personalized Gift Message</label>
+                    <textarea id="giftMessage" name="giftMessage" placeholder="Enter your message..." rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Choose Your Bouquet Size</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="bouquetSize" value="standard" checked>
+                            <span>Standard</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="bouquetSize" value="deluxe">
+                            <span>Deluxe</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div class="payment-options">
+                        <label class="radio-label small">
+                            <input type="radio" name="paymentMethod" value="bca" checked>
+                            <span>BCA</span>
+                        </label>
+                        <label class="radio-label small">
+                            <input type="radio" name="paymentMethod" value="bri">
+                            <span>BRI</span>
+                        </label>
+                        <label class="radio-label small">
+                            <input type="radio" name="paymentMethod" value="bni">
+                            <span>BNI</span>
+                        </label>
+                        <label class="radio-label small">
+                            <input type="radio" name="paymentMethod" value="mandiri">
+                            <span>Mandiri</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="radio-label">
+                        <input type="checkbox" id="termsCheckbox" name="termsCheckbox" required>
+                        <span>I agree to the <a href="terms&condi.html">terms and conditions</a></span>
+                    </label>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">Complete Purchase</button>
+                    <div class="total-price">
+                        Total Price: <span id="totalPrice"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="mouse.js"></script>
+
+    <script src="purchase.js"></script>
+</body>

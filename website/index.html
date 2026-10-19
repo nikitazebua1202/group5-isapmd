@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomify - Your Beautiful Flowers Here!</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="mouse.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+    
+    <style>
+        /* Reset dasar agar tampilan rapi di semua browser */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f0f2f5; /* Warna background abu muda */
+        }
+
+        /* --- STYLE TOMBOL CHAT (BUBBLE) --- */
+        .chat-btn {
+            position: fixed;     /* Agar tetap melayang saat scroll */
+            bottom: 20px;
+            right: 20px;
+            background-color: #6366f1; /* Warna Ungu Utama */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4); /* Efek bayangan */
+            z-index: 1000;       /* Pastikan tombol selalu di paling depan */
+            transition: transform 0.2s; /* Animasi saat diklik */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1); /* Membesar sedikit saat di-hover */
+        }
+
+        /* --- STYLE KOTAK CHAT POP-UP --- */
+        .chat-popup {
+            display: none;       /* Tersembunyi saat pertama kali dibuka */
+            position: fixed;     /* Melayang */
+            bottom: 90px;        /* Di atas tombol chat */
+            right: 20px;
+            width: 350px;
+            height: 500px;       /* Tinggi fix agar rapi */
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Header (Bagian Atas Chat) */
+        .chat-header {
+            background: linear-gradient(135deg, #6366f1, #818cf8);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .chat-disclaimer {
+            background: #fff3cd;
+            color: #856404;
+            padding: 8px;
+            font-size: 11px;
+            text-align: center;
+            border-bottom: 1px solid #ffeeba;
+        }
+
+        /* Body (Tempat percakapan muncul) */
+        .chat-body {
+            flex: 1;             /* Mengisi sisa ruang */
+            overflow-y: auto;    /* Bisa di-scroll jika chat panjang */
+            padding: 15px;
+            background: #f9fafb;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Bubble Pesan */
+        .message {
+            padding: 10px 14px;
+            border-radius: 12px;
+            max-width: 80%;
+            font-size: 14px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .bot-message {
+            background: white;
+            align-self: flex-start; /* Rata Kiri */
+            border: 1px solid #e5e7eb;
+            color: #374151;
+            border-bottom-left-radius: 2px;
+        }
+
+        .user-message {
+            background: #6366f1;
+            color: white;
+            align-self: flex-end;   /* Rata Kanan */
+            border-bottom-right-radius: 2px;
+        }
+
+        /* Footer (Input Box) */
+        .chat-footer {
+            padding: 15px;
+            display: flex;
+            border-top: 1px solid #e5e7eb;
+            background: white;
+            align-items: center;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+            background-color: #f9fafb;
+        }
+
+        .chat-footer input:focus {
+            border-color: #6366f1;
+            background-color: white;
+        }
+
+        .chat-footer button {
+            background: none;
+            border: none;
+            color: #6366f1;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            padding: 5px;
+            transition: transform 0.2s;
+        }
+        
+        .chat-footer button:hover {
+            transform: translateX(3px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cursor-glow"></div>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <a href="home.html" class="logo-link">
+                <h1 class="logo" style="letter-spacing: 2px; padding: 10px;">Bloomify</h1>
+            </a>
+            <p class="tagline" style="font-family: Georgia, serif; letter-spacing: 1px;">Your Beautiful Flowers Here! 🌸</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="Facebook" style="box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram" style="box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Pinterest" style="box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="TikTok" style="box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Twitter" style="box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+
+            <div class="copyright" style="text-transform: uppercase; font-size: 0.9rem;">
+                © 2025 Bloomify 💕
+            </div>
+        </div>
+
+        <div class="sparkle-icon">✨</div>
+    </footer>
+
+    <button class="chat-btn" onclick="toggleChat()">
+        <i class="fas fa-comment-dots"></i> </button>
+
+    <div class="chat-popup" id="chatWindow">
+        <div class="chat-header">
+            <span>Open WebUI: tinyllama</span>
+            <button class="close-btn" onclick="toggleChat()">✖</button>
+        </div>
+        
+        <div class="chat-disclaimer">
+            Please note that AI may display inaccurate information.
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <div class="message bot-message">
+                Hi <b>Nikita</b>, how can I help you today?
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type something..." onkeypress="handleEnter(event)">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i> </button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Fungsi Buka/Tutup Chat
+        function toggleChat() {
+            const chatWindow = document.getElementById("chatWindow");
+            
+            // Cek style saat ini
+            if (chatWindow.style.display === "flex") {
+                chatWindow.style.display = "none"; // Tutup
+            } else {
+                chatWindow.style.display = "flex"; // Buka
+            }
+        }
+
+        // 2. Kirim pesan pakai tombol Enter
+        function handleEnter(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        // 3. Fungsi Tambah Pesan ke Layar
+        function addMessage(text, className) {
+            const chatBody = document.getElementById("chatBody");
+            const div = document.createElement("div");
+            div.classList.add("message", className);
+            div.innerHTML = text.replace(/\n/g, "<br>"); // Ubah Enter jadi baris baru
+            
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight; // Auto scroll ke bawah
+            return div; // Mengembalikan elemen div agar bisa diedit nanti
+        }
+
+        // 4. Fungsi Utama Kirim Pesan
+        async function sendMessage() {
+            const inputField = document.getElementById("userInput");
+            const message = inputField.value.trim();
+            
+            if (message === "") return; // Jangan kirim kalau kosong
+
+            // Tampilkan pesan User
+            addMessage(message, 'user-message');
+            inputField.value = ""; // Bersihkan input
+
+            // Tampilkan Loading "Thinking..."
+            const loadingDiv = addMessage("Thinking...", 'bot-message');
+
+            try {
+                const response = await fetch("http://localhost:11434/api/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        model: "tinyllama",
+                        messages: [ { role: "user", content: message } ],
+                        stream: false
+                    })
+                });
+
+                if (!response.ok) throw new Error("Gagal koneksi ke Ollama");
+
+                const data = await response.json();
+
+                loadingDiv.remove();
+
+                addMessage(data.message.content, 'bot-message');
+
+            } catch (error) {
+                loadingDiv.innerText = "Maaf, saya tidak bisa terhubung ke server AI. Pastikan Docker Ollama berjalan.";
+                loadingDiv.style.color = "red";
+                console.error(error);
+            }
+        }
+    </script>
+
+    <script src="mouse.js"></script>
+</body>
+</html>

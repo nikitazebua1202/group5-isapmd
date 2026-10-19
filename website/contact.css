@@ -1,0 +1,125 @@
+/* CONTACT FORM STYLES */
+.contact-form-container {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 192, 203, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.input-group label {
+    color: #b3005e;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 14px 18px;
+    border: 2px solid #ffd6e7;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: #fff;
+    color: #4a1a2c;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #e91e63;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+    transform: translateY(-2px);
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 0.85em;
+    color: #6a2c3e;
+    margin-top: -15px;
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    align-self: center;
+    min-width: 220px;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #c2185b 0%, #b3005e 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(-1px);
+}
+
+.button-icon {
+    font-size: 1.2em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-container {
+        padding: 25px 15px;
+    }
+}

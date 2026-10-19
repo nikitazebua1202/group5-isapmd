@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomify - Order Confirmation</title>
+    <link rel="stylesheet" href="confirm.css">
+    <link rel="stylesheet" href="mouse.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+
+    <button class="back-home-btn" onclick="window.location.href='home.html'">
+        ← Back Home
+    </button>
+
+    <div class="container confirmation">
+        <div class="left-section">
+            <h1 class="logo-flora">Bloomify</h1>
+            <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=800" alt="Beautiful pink bouquet" class="bouquet-image">
+        </div>
+        
+        <div class="right-section confirmation-section">
+            <h2 class="confirmation-title">Your Thoughtful<br>Gift is on Its Way!</h2>
+            
+            <p class="confirmation-text">
+                Thank you for your order, <span id="confirmRecipientName">[Recipient's Name]</span>! 
+                Your beautiful bouquet from Bloomify's is being prepared with love and care. 
+                We're sure it will bring a smile!
+            </p>
+            
+            <p class="delivery-info">
+                We'll deliver to <span id="confirmAddress">[Delivery Address]</span> on <span id="confirmDate">[Delivery Date]</span>
+            </p>
+            
+            <div class="order-info">
+                <span class="icon">🌸</span>
+                <span>Order Confirmation <span id="orderNumber">#Order Number</span></span>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <script src="mouse.js"></script>
+
+    <script src="confirm.js"></script>
+</body>
+</html>

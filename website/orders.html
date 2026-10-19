@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Bloomify</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="orders.css">
+    <link rel="stylesheet" href="mouse.css">
+    <link rel="stylesheet" href="scrollbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+
+    <!-- Orders Content -->
+    <section class="orders-section">
+        <div class="container"></div>
+
+            <!-- Filters and Search -->
+            <div class="orders-controls">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchOrders" placeholder="Search by order ID or product name...">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="statusFilter">Status:</label>
+                    <select id="statusFilter">
+                        <option value="all">All Orders</option>
+                        <option value="order-make">Order Make</option>
+                        <option value="production">Production</option>
+                        <option value="shipping">Shipping</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sortBy">Sort By:</label>
+                    <select id="sortBy">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="price-low">Price: Low to High</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Orders List -->
+            <div class="orders-list" id="ordersList">
+                <!-- Orders will be dynamically loaded here -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-orders" id="emptyState" style="display: none;">
+                <div class="empty-icon">📦</div>
+                <h3>No Orders Found</h3>
+                <p>You haven't placed any orders yet or no orders match your filters.</p>
+                <a href="home.html#home" class="shop-now-btn">Start Shopping</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Detail Modal -->
+    <div class="modal" id="orderDetailModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Order details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🌸 Bloomify</h3>
+                <p>Spreading joy, one bouquet at a time</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📧 hello@bloomify.com</p>
+                <p>📞 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bloomify Flowers | Crafted with 💕 for flower lovers</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="orders.js"></script>
+    <script src="mouse.js"></script>
+</body>
+</html>

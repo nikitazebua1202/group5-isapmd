@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomify - Find The Best Bouquet Flowers</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="mouse.css">
+    <link rel="stylesheet" href="scrollbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+
+    <!-- Side Navigation Bar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <button class="close-btn" id="closeSidebar">&times;</button>
+        </div>
+        
+        <!-- Account Section -->
+        <div class="sidebar-section account-section">
+            <div class="account-icon">👤</div>
+            <h3>My Account</h3>
+            <div class="account-info">
+                <p><strong></strong></p>
+                <p class="email"></p>
+            </div>
+            <div class="account-links">
+                <a href="profile.html">Profile Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div>
+
+<!-- Order Tracking Section -->
+    <div class="sidebar-section order-section">
+        <div class="section-header">
+            <span class="icon">📦</span>
+            <h3>Order Tracking</h3>
+        </div>
+        <div class="order-items">
+            <!-- Order 1 -->
+            <div class="order-item" data-order-id="">
+                <div class="order-header">
+                    <span class="order-number"></span>
+                    <span class="order-date"></span>
+                </div>
+                <div class="order-product">
+                    <p class="product-name"></p>
+                </div>
+                <div class="order-status">
+                    <span class="status-badge order-make"></span>
+                </div>
+            </div>
+
+            <!-- Order 2 -->
+            <div class="order-item" data-order-id="">
+                <div class="order-header">
+                    <span class="order-number"></span>
+                    <span class="order-date"></span>
+                </div>
+                <div class="order-product">
+                    <p class="product-name"></p>
+                </div>
+                <div class="order-status">
+                    <span class="status-badge cancelled"></span>
+                </div>
+            </div>
+        </div>
+        <button class="view-all-orders-btn">View All Orders</button>
+    </div>
+
+        <!-- Address Section -->
+        <div class="sidebar-section address-section">
+            <div class="section-header">
+                <span class="icon">📍</span>
+                <h3>Delivery Address</h3>
+            </div>
+            <div class="address-content">
+                <div class="saved-address active">
+                    <h4>Home</h4>
+                    <p>123 Blossom Street</p>
+                    <p>Flower City, FC 12345</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+                <div class="saved-address">
+                    <h4>Work</h4>
+                    <p>456 Garden Avenue</p>
+                    <p>Flower City, FC 12345</p>
+                    <p>Phone: (555) 987-6543</p>
+                </div>
+                <button class="add-address-btn">+ Add New Address</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <button class="menu-icon" id="menuIcon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span class="logo">🌸 Bloomify</span>
+        </div>
+        <div class="navbar-right">
+            <a href="#home" class="nav-link1 active">Home</a>
+            <a href="#seasonal" class="nav-link1">Seasonal</a>
+            <a href="#about" class="nav-link1">About</a>
+            <a href="#contact" class="nav-link1">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="page-section active">
+        <header class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Bloomify</h1>
+                <p>Find The Best Bouquet Flowers Here! 💐</p>
+            </div>
+        </header>
+
+            <div class="card-container">
+            <div class="card">
+                <img src="images/bouquet1.jpg" alt="Pink-White Rose Bouquet">
+                <h3>Pink White Rose Bouquet</h3>
+                <p class="desc">Whimsical love and tender affection</p>
+                <p class="price">Rp 150.000 ~ Rp 350.000</p>
+                <a href="purchase.html?id=1"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet2.jpg" alt="Sun Flower Bouquet">
+                <h3>Sun Flower Bouquet</h3>
+                <p class="desc">Gentle love and happiness</p>
+                <p class="price">Rp 200.000 ~ Rp 420.000</p>
+                <a href="purchase.html?id=2"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet3.jpg" alt="Gerbera Joy Bouquet">
+                <h3>Gerbera Joy Bouquet</h3>
+                <p class="desc">Purity and fresh beginnings</p>
+                <p class="price">Rp 150.000 ~ Rp 280.000</p>
+                <a href="purchase.html?id=3"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet4.jpg" alt="Bloom Harmony Bouquet">
+                <h3>Bloom Harmony</h3>
+                <p class="desc">Joy and devoted friendship</p>
+                <p class="price">Rp 225.000 ~ Rp 450.000</p>
+                <a href="purchase.html?id=4"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet5.jpg" alt="Dreams Bouquet">
+                <h3>Dreams Bouquet</h3>
+                <p class="desc">Sunshine and innocence</p>
+                <p class="price">Rp 150.000 ~ Rp 270.000</p>
+                <a href="purchase.html?id=5"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet6.jpg" alt="Pink Tulip Bouquet">
+                <h3>Pink Tulip Bouquet</h3>
+                <p class="desc">Deep admiration and gratitude</p>
+                <p class="price">Rp 180.000 ~ Rp 250.000</p>
+                <a href="purchase.html?id=6"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet7.jpg" alt="Exotic Orchid Bouquet">
+                <h3>Exotic Orchid</h3>
+                <p class="desc">Cheerfulness and fresh starts</p>
+                <p class="price">Rp 150.000 ~ Rp 220.000</p>
+                <a href="purchase.html?id=7"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet8.jpg" alt="White Rose Bouquet">
+                <h3>White Rose Bouquet</h3>
+                <p class="desc">Perfect love and caring</p>
+                <p class="price">Rp 200.000 ~ 350.000</p>
+                <a href="purchase.html?id=8"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet9.jpg" alt="Sparkle Bouquet">
+                <h3>Sparkle Bouquet</h3>
+                <p class="desc">Refined beauty and timeless elegance</p>
+                <p class="price">Rp 350.000 ~ Rp 520.000</p>
+                <a href="purchase.html?id=9"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+
+            <div class="card">
+                <img src="images/bouquet10.jpg" alt="Bloom White Tulip Bouquet">
+                <h3>Bloom White Tulip Bouquet</h3>
+                <p class="desc">Loyalty and unwavering gratitude</p>
+                <p class="price">Rp 150.000 ~ 270.000</p>
+                <a href="purchase.html?id=10"><button class="purchase-btn1">Purchase Now</button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEASONAL SECTION -->
+    <section id="seasonal" class="page-section">
+        <div class="seasonal-hero">
+            <div class="hero-overlay"></div>
+            <div class="seasonal-hero-content">
+                <h1 class="fade-in">Seasonal Collections</h1>
+                <p class="subtitle fade-in-delay">Discover the Perfect Blooms for Every Season</p>
+            </div>
+            <div class="floating-petals">
+                <span class="petal">🌸</span>
+                <span class="petal">🌺</span>
+                <span class="petal">🌼</span>
+                <span class="petal">🌷</span>
+                <span class="petal">🌹</span>
+            </div>
+        </div>
+
+        <div class="availability-section">
+            <div class="container">
+                <h2 class="section-title">Seasonal Flower Availability</h2>
+                <p class="section-intro">Plan ahead with our seasonal flower calendar. Each season brings unique blooms at their peak freshness and beauty.</p>
+                
+                <div class="table-wrapper">
+                    <table class="seasonal-table">
+                        <thead>
+                            <tr>
+                                <th>Season</th>
+                                <th>Available Flowers</th>
+                                <th>Peak Months</th>
+                                <th>Availability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Season"><strong>🌸 Spring</strong></td>
+                                <td data-label="Available Flowers">Tulips, Cherry Blossoms, Daffodils, Hyacinths</td>
+                                <td data-label="Peak Months">March - May</td>
+                                <td data-label="Availability"><span class="status coming">Coming Soon</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Season"><strong>☀️ Summer</strong></td>
+                                <td data-label="Available Flowers">Sunflowers, Lilies, Roses, Dahlias</td>
+                                <td data-label="Peak Months">June - August</td>
+                                <td data-label="Availability"><span class="status coming">Coming Soon</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Season"><strong>🍂 Autumn</strong></td>
+                                <td data-label="Available Flowers">Chrysanthemums, Marigolds, Asters, Zinnias</td>
+                                <td data-label="Peak Months">September - November</td>
+                                <td data-label="Availability"><span class="status limited">Limited</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Season"><strong>❄️ Winter</strong></td>
+                                <td data-label="Available Flowers">Poinsettias, Amaryllis, Orchids, Carnations</td>
+                                <td data-label="Peak Months">December - February</td>
+                                <td data-label="Availability"><span class="status available">In Season</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="season-detail winter-section">
+            <div class="container">
+                <div class="season-content">
+                    <div class="season-text">
+                        <h2>❄️ Winter Collection</h2>
+                        <p class="season-description">Welcome the season of quiet wonder with our radiant winter blooms. Each flower reflects resilience, hope, and the fresh beginnings that arise even in the heart of winter.</p>
+                        
+                        <div class="lists-container">
+                            <div class="list-box">
+                                <h3>Top Winter Arrangements</h3>
+                                <ol class="styled-ordered-list">
+                                    <li>
+                                        <strong>Snowlit Evergreen Whisper</strong>
+                                        <p>A cool-toned bouquet with white roses, hellebores (often called the Christmas rose), and silvery-blue eryngium to give an icy, frosted look. Soft evergreen foliage such as pine or fir and a touch of white berries complete the wintry, woodland feel.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Crimson Hearth Glow</strong>
+                                        <p>A rich, warm mix of deep red amaryllis, classic red roses, and burgundy chrysanthemums for a cozy “by the fireplace” vibe. Dark greenery and red hypericum berries add texture and warmth, making it perfect for December or holiday gifting.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Frosted Moonlight Roses</strong>
+                                        <p>A mostly white bouquet of roses, lisianthus, and ranunculus, highlighting soft, layered petals that feel romantic against a snowy backdrop. Accents of dusty miller or eucalyptus bring in a frosty silver tone that suits evening winter events.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Nordic Berry Woodland</strong>
+                                        <p>This bouquet mixes creamy roses with hypericum berries and seasonal greenery like holly or pine, giving a rustic, forest-inspired look. The contrast of pale blooms with red berries and deep green foliage feels both festive and natural.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                            
+                            <div class="list-box">
+                                <h3>Winter Care Essentials</h3>
+                                <ul class="styled-unordered-list">
+                                    <li>Water plants only when the top soil feels dry to avoid overwatering in winter.</li>
+                                    <li>Place flowers where they receive the most natural light, such as near bright windows.</li>
+                                    <li>Boost humidity around plants with a humidifier, pebble tray, or by grouping them together.</li>
+                                    <li>Shield outdoor flowers from frost with mulch, covers, or protective cloths.</li>
+                                    <li>Fertilize lightly and less often, since growth naturally slows in colder months.</li>
+                                    <li>Regularly remove dead leaves and spent blooms to keep plants healthy and prevent disease.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="season-detail autumn-section">
+            <div class="container">
+                <div class="season-content reverse">
+                    <div class="season-text">
+                        <h2>🌸 Autumn Collection</h2>
+                        <p class="season-description">We welcomed the passing autumn with our warm, earthy blooms. Each flower captured the quiet beauty of the season gone by and the strength found in embracing change.</p>
+                        
+                        <div class="lists-container">
+                            <div class="list-box">
+                                <h3>Autumn Arrangements</h3>
+                                <ol class="styled-ordered-list">
+                                    <li>
+                                        <strong>Chrysanthemum Glory Bouquet</strong>
+                                        <p>A stunning display of burgundy, orange, and golden chrysanthemums arranged in a rustic autumn style. Perfect for Thanksgiving celebrations and fall gatherings.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Harvest Moon Collection</strong>
+                                        <p>Warm-toned marigolds mixed with deep red dahlias create a cozy, harvest-inspired arrangement that captures the essence of autumn evenings.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Autumn Sunset Bouquet</strong>
+                                        <p>Rich copper and amber zinnias paired with burnt orange asters for a breathtaking gradient effect reminiscent of fall sunsets.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Rustic Fall Garden</strong>
+                                        <p>A charming combination of mixed autumn blooms with wheat stalks, dried leaves, and seasonal berries for a natural, countryside feel.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                            
+                            <div class="list-box">
+                                <h3>Autumn Care Essentials</h3>
+                                <ul class="styled-unordered-list">
+                                    <li>Keep flowers away from cold drafts and heating vents</li>
+                                    <li>Change water every 2-3 days to prevent bacteria buildup</li>
+                                    <li>Trim stems regularly for better water absorption</li>
+                                    <li>Remove wilted blooms and fallen leaves promptly</li>
+                                    <li>Use lukewarm water instead of cold water</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-seasonal">
+            <div class="container">
+                <h2 class="section-title">Why Choose Seasonal Flowers?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌱</div>
+                        <h3>Peak Freshness</h3>
+                        <p>Flowers in season are at their natural peak, ensuring maximum freshness and longevity in your arrangement.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <h3>Better Value</h3>
+                        <p>Seasonal blooms are more abundant and locally sourced, offering you premium quality at the best prices.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌍</div>
+                        <h3>Eco-Friendly</h3>
+                        <p>Supporting seasonal flowers reduces carbon footprint from long-distance shipping and promotes sustainable farming.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎨</div>
+                        <h3>Natural Beauty</h3>
+                        <p>Each season brings unique colors and textures that reflect nature's perfect timing and artistry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="page-section">
+        <div class="about-hero">
+            <div class="hero-overlay"></div>
+            <div class="about-hero-content">
+                <h1 class="fade-in">About Bloomify Flowers</h1>
+                <p class="subtitle fade-in-delay">Where Every Petal Tells a Story</p>
+            </div>
+            <div class="floating-petals">
+                <span class="petal">🌸</span>
+                <span class="petal">🌺</span>
+                <span class="petal">🌼</span>
+                <span class="petal">🌷</span>
+                <span class="petal">🌹</span>
+            </div>
+        </div>
+
+        <div class="our-story">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2>Our Story</h2>
+                        <p>Welcome to Bloomify Flowers – where beauty blooms in every petal. Founded with love and passion for nature, we bring you the finest selection of fresh flowers to brighten every moment of your life.</p>
+                        <p>What started as a small neighborhood flower stand has blossomed into a beloved destination for those seeking the perfect arrangement. Each bouquet we create is crafted with care, attention to detail, and a deep appreciation for the natural beauty of flowers.</p>
+                    </div>
+                    <div class="story-image">
+                        <div class="image-frame">
+                            <img src="images/Toko Bunga.jpg" alt="Bloomify Flower Shop" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mission-section">
+            <div class="container">
+                <div class="mission-card">
+                    <div class="mission-icon">🌺</div>
+                    <h2>Our Mission</h2>
+                    <p>At Bloomify, our mission is to make every occasion more special through the art of floral design. We believe that flowers have the power to express emotions, celebrate love, and bring happiness to everyone.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="values-section">
+            <div class="container">
+                <h2 class="section-title">What We Stand For</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">✨</div>
+                        <h3>Quality First</h3>
+                        <p>We source only the freshest, most beautiful flowers from trusted growers to ensure lasting beauty.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">💐</div>
+                        <h3>Personal Touch</h3>
+                        <p>Every arrangement is handcrafted with care and customized to suit your unique needs and occasions.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌿</div>
+                        <h3>Sustainability</h3>
+                        <p>We're committed to eco-friendly practices and supporting local, sustainable flower farming.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🎨</div>
+                        <h3>Creative Design</h3>
+                        <p>Our talented florists blend artistry with nature to create stunning, one-of-a-kind arrangements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="page-section">
+        <div class="contact">
+            <div class="floating-petals">
+                <span class="petal">🌸</span>
+                <span class="petal">🌺</span>
+                <span class="petal">🌷</span>
+                <span class="petal">🌹</span>
+                <span class="petal">🌻</span>
+            </div>
+
+            <div class="contact-header">
+                <h2>Get In Touch</h2>
+                <p class="contact-subtitle">We'd love to hear from you!</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="contact-name">Full Name *</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Enter your name" required>
+                        </div> 
+                        <div class="input-group">
+                            <label for="contact-email">Email Address *</label>
+                            <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="contact-phone">Phone Number (Optional)</label>
+                            <input type="tel" id="contact-phone" name="phone" placeholder="+62 812-3456-7890">
+                        </div>
+                        <div class="input-group">
+                            <label for="contact-subject">Subject *</label>
+                            <input type="text" id="contact-subject" name="subject" placeholder="What's this about?" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                     <label for="contact-message">Your Message *</label>
+                        <textarea id="contact-message" name="message" rows="6" placeholder="Tell us what's on your mind..." maxlength="500" required></textarea>
+                        <div class="char-counter">0 / 500</div>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <span>Send Message</span>
+                        <span class="button-icon">✉️</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info Cards -->
+            <div class="contact-info-cards">
+                <div class="info-card">
+                    <div class="icon-wrapper">📧</div>
+                    <h3>Email Us</h3>
+                    <p>hello@bloomify.com</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-wrapper">📞</div>
+                    <h3>Call Us</h3>
+                    <p>(555)123-4567</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon-wrapper">📍</div>
+                    <h3>Visit Us</h3>
+                    <p>Jl. Mawar No. 12<br>Jakarta, Indonesia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🌸 Bloomify</h3>
+                <p>Spreading joy, one bouquet at a time</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📧 hello@bloomify.com</p>
+                <p>📞 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bloomify Flowers | Crafted with 💕 for flower lovers</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="home.js"></script>
+
+    <script src="contact.js"></script>
+    
+    <script src="mouse.js"></script>
+</body>

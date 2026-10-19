@@ -1,0 +1,130 @@
+/* ============================
+   PINK SCROLLBAR THEME
+   Add this CSS file to any page for beautiful pink scrollbars
+   ============================ */
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #fff7fa 0%, #ffe6f2 100%);
+    border-radius: 10px;
+    border: 2px solid #ffd6e7;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    border-radius: 10px;
+    border: 2px solid #ffd6e7;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ff1a8c 0%, #d6006f 100%);
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+    border-color: #ffb3c6;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #b3005e 0%, #880046 100%);
+}
+
+/* Scrollbar corner (where horizontal and vertical scrollbars meet) */
+::-webkit-scrollbar-corner {
+    background: #fff7fa;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #e91e63 #ffe6f2;
+}
+
+/* ============================
+   OPTIONAL: CUSTOM SCROLLBAR FOR SPECIFIC ELEMENTS
+   ============================ */
+
+/* For sidebar or specific containers with class .pink-scroll */
+.pink-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pink-scroll::-webkit-scrollbar-track {
+    background: #ffe6f2;
+    border-radius: 8px;
+}
+
+.pink-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    border-radius: 8px;
+}
+
+.pink-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ff1a8c 0%, #d6006f 100%);
+}
+
+/* ============================
+   THIN SCROLLBAR VARIANT
+   ============================ */
+
+/* For elements with class .thin-pink-scroll */
+.thin-pink-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.thin-pink-scroll::-webkit-scrollbar-track {
+    background: #ffe6f2;
+    border-radius: 6px;
+}
+
+.thin-pink-scroll::-webkit-scrollbar-thumb {
+    background: #e91e63;
+    border-radius: 6px;
+}
+
+.thin-pink-scroll::-webkit-scrollbar-thumb:hover {
+    background: #c2185b;
+}
+
+/* ============================
+   INVISIBLE SCROLLBAR (but still scrollable)
+   ============================ */
+
+/* For elements with class .invisible-scroll */
+.invisible-scroll::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.invisible-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* ============================
+   ANIMATED SCROLLBAR (appears on hover)
+   ============================ */
+
+/* For elements with class .hover-scroll */
+.hover-scroll::-webkit-scrollbar {
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.hover-scroll:hover::-webkit-scrollbar {
+    width: 10px;
+}
+
+.hover-scroll::-webkit-scrollbar-track {
+    background: #ffe6f2;
+    border-radius: 8px;
+}
+
+.hover-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    border-radius: 8px;
+}

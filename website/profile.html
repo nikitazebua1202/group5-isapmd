@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - Bloomify</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="mouse.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+
+    <div class="container">
+        <h1>Profile Settings</h1>
+        
+        <div class="profile-section">
+            <div class="profile-picture">
+                <div class="flower-frame">
+                    <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profileImg">
+                </div>
+                <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                <button class="upload-btn" id="uploadBtn">Upload Photo</button>
+            </div>
+            
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="your@email.com" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" placeholder="Enter phone number">
+                </div>
+                
+                <div class="button-group">
+                    <button class="save-btn" id="saveBtn">Save Changes</button>
+                    <button class="cancel-btn" id="cancelBtn">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="mouse.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

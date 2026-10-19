@@ -1,0 +1,190 @@
+/* ============================
+   BOUTIQUE MOUSE EFFECT STYLES
+   ============================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-pink: #e91e63;
+    --deep-pink: #b3005e;
+    --light-pink: #ffe6f2;
+    --soft-pink: #ffd6e7;
+    --cream: #fff7fa;
+    --hot-pink: #ff69b4;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: none;
+    position: relative;
+}
+
+/* ============================
+   CURSOR EFFECTS
+   ============================ */
+
+/* Custom cursor glow */
+.cursor-glow {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-pink);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 0 20px rgba(233, 30, 99, 0.6);
+}
+
+.cursor-glow.clicking {
+    width: 25px;
+    height: 25px;
+    border-color: var(--hot-pink);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+}
+
+/* Particle elements (created by JavaScript) */
+.particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    font-size: 20px;
+    animation: floatAway 3s ease-out forwards;
+}
+
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, var(--hot-pink), transparent);
+    border-radius: 50%;
+    animation: sparkleGlow 1.5s ease-out forwards;
+}
+
+.heart-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    font-size: 16px;
+    color: var(--primary-pink);
+    animation: heartFloat 2.5s ease-out forwards;
+}
+
+/* ============================
+   ANIMATIONS
+   ============================ */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes floatAway {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) rotate(var(--rotate)) scale(0.3);
+    }
+}
+
+@keyframes sparkleGlow {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 10px var(--hot-pink);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+        box-shadow: 0 0 20px var(--hot-pink);
+    }
+}
+
+@keyframes heartFloat {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), -80px) scale(1.5);
+    }
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+   ============================ */
+
+@media (max-width: 768px) {
+    .demo-header h1 {
+        font-size: 2.5em;
+    }
+
+    .tagline {
+        font-size: 1.2em;
+    }
+
+    .feature-card .icon {
+        font-size: 3em;
+    }
+
+    .demo-section h2 {
+        font-size: 2em;
+    }
+
+    .demo-section p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-container {
+        padding: 40px 15px;
+    }
+
+    .demo-header h1 {
+        font-size: 2em;
+    }
+
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+}
