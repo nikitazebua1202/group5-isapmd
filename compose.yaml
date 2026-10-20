@@ -1,7 +1,6 @@
 services:
-  webserver:
-    image: tomsik68/xampp
+  bloomify-web:
+    build: .
     ports:
-      - "8081:80"
-    volumes:
-      - ./website:/opt/lampp/htdocs
+      - "${APP_PORT:-8081}:80"
+    restart: always
