@@ -1,27 +1,27 @@
 # Bloomify - Web Application Dockerization
 
-Aplikasi web statis Bloomify yang di-containerize menggunakan Nginx dan Docker Compose.
+Bloomify static web application containerized using Nginx and Docker Compose.
 
 ## Prerequisites
 - Docker Desktop / Docker Engine
 - Docker Compose
 
-## Cara Menjalankan Aplikasi
+## How to Run the Application
 1. Clone repositori:
    git clone https://github.com/nikitazebua1202/group5-isapmd.git
    cd group5-isapmd
 
-2. Buat file `.env` dari `.env.example`:
+2. Create `.env` file from `.env.example`:
    cp .env.example .env
 
-3. Jalankan container dengan Docker Compose:
+3. Run the container using Docker Compose:
    docker compose up -d
 
-4. Akses aplikasi melalui browser di: `http://localhost:8081`
+4. Access the application in your browser at: `http://localhost:8081`
 
-## Cek Status & Log
-- Cek status container: `docker compose ps`
-- Cek log aplikasi: `docker compose logs`
+## Check Status & Logs
+- Check container status: `docker compose ps`
+- Check application logs: `docker compose logs`
 
-## Mematikan Aplikasi
-- Hentikan container: `docker compose down`
+## Stopping the Application
+- Stop the container: `docker compose down`
